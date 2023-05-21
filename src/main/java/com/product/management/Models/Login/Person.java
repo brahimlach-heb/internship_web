@@ -9,14 +9,18 @@ import java.util.Date;
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    protected   Integer id;
-    protected   String Username;
-    protected String Password;
-    protected Date born;
-    protected Boolean RS;
-    protected String ncs;
+    private    Integer id;
+    private    String First;
+    private    String Last;
+    private   String Username;
+    private String Password;
+    private Date born;
+    private Boolean RS;
+    private String ncs;
 
-    public Person( String username, String password, Date born, Boolean RS, String ncs) {
+    public Person(String first, String last, String username, String password, Date born, Boolean RS, String ncs) {
+        First = first;
+        Last = last;
         Username = username;
         Password = password;
         this.born = born;
@@ -28,8 +32,20 @@ public class Person {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public String getFirst() {
+        return First;
+    }
+
+    public void setFirst(String first) {
+        First = first;
+    }
+
+    public String getLast() {
+        return Last;
+    }
+
+    public void setLast(String last) {
+        Last = last;
     }
 
     public String getUsername() {
